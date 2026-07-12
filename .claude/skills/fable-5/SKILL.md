@@ -1,5 +1,5 @@
 ---
-name: hard-task-execution
+name: fable-5
 description: >
   How to work through hard, multi-step, or ambiguous tasks: decompose them into
   verifiable pieces, verify your own work by observing real behavior instead of
@@ -8,7 +8,7 @@ description: >
   risky to get wrong, or when you notice yourself guessing.
 ---
 
-# Hard Task Execution
+# Fable 5 — Hard Task Execution
 
 A hard task is any task where your first instinct could plausibly be wrong:
 multiple steps, unfamiliar code, vague requirements, or expensive mistakes.
