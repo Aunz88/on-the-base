@@ -2,14 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  html,body{margin:0;padding:0;background:#000;}
-  #stage{width:2160px;height:3840px;overflow:hidden;}
+  html,body{margin:0;padding:0;background:#d9d1c0;}
+  #stage{display:flex;justify-content:center;}
+  #stage svg{display:block;width:100vw;max-width:100%;height:auto;max-height:100vh;}
 </style>
 </head>
 <body>
 <div id="stage">
-<svg width="2160" height="3840" viewBox="0 0 2160 3840" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 2160 3840" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- warm stone background -->
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
