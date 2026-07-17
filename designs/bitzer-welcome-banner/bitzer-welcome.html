@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html,body{margin:0;padding:0;background:#000;}
+  #stage{width:2160px;height:3840px;overflow:hidden;}
+</style>
+</head>
+<body>
+<div id="stage">
+<svg width="2160" height="3840" viewBox="0 0 2160 3840" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- warm stone background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#f7f3ec"/>
+      <stop offset="0.35" stop-color="#efe9dd"/>
+      <stop offset="0.75" stop-color="#e6dfd0"/>
+      <stop offset="1"   stop-color="#d9d1c0"/>
+    </linearGradient>
+    <!-- soft ceiling light glow -->
+    <radialGradient id="glow" cx="0.5" cy="0.08" r="0.9">
+      <stop offset="0" stop-color="#fffdf6" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#fffdf6" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#fffdf6" stop-opacity="0"/>
+    </radialGradient>
+    <!-- brushed steel plate -->
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#fafbfc"/>
+      <stop offset="0.18" stop-color="#dfe3e7"/>
+      <stop offset="0.42" stop-color="#c3c9cf"/>
+      <stop offset="0.55" stop-color="#eef1f4"/>
+      <stop offset="0.78" stop-color="#cdd3d9"/>
+      <stop offset="1"    stop-color="#aeb5bc"/>
+    </linearGradient>
+    <linearGradient id="steelEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#8a9199"/>
+    </linearGradient>
+    <!-- bitzer green -->
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#12b155"/>
+      <stop offset="0.5" stop-color="#009640"/>
+      <stop offset="1"   stop-color="#006b2d"/>
+    </linearGradient>
+    <linearGradient id="greenBar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#007a34"/>
+      <stop offset="0.5" stop-color="#009640"/>
+      <stop offset="1"   stop-color="#007a34"/>
+    </linearGradient>
+    <!-- logo highlight -->
+    <linearGradient id="logoShine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#4a4438" flood-opacity="0.35"/>
+    </filter>
+    <filter id="plateShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#3d3830" flood-opacity="0.4"/>
+    </filter>
+    <filter id="textShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <!-- brushed texture lines -->
+    <pattern id="brush" width="2160" height="4" patternUnits="userSpaceOnUse">
+      <rect width="2160" height="4" fill="none"/>
+      <line x1="0" y1="1" x2="2160" y2="1" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1"/>
+      <line x1="0" y1="3" x2="2160" y2="3" stroke="#5b636b" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- ===================== BACKGROUND ===================== -->
+  <rect width="2160" height="3840" fill="url(#bg)"/>
+  <rect width="2160" height="3840" fill="url(#glow)"/>
+
+  <!-- faint architectural vertical panels -->
+  <g stroke="#b9ae98" stroke-opacity="0.25" stroke-width="3">
+    <line x1="180"  y1="0" x2="180"  y2="3840"/>
+    <line x1="1980" y1="0" x2="1980" y2="3840"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.5" stroke-width="2">
+    <line x1="184"  y1="0" x2="184"  y2="3840"/>
+    <line x1="1984" y1="0" x2="1984" y2="3840"/>
+  </g>
+
+  <!-- giant faint marquise watermark -->
+  <g transform="translate(1080,2350) scale(11)" opacity="0.05">
+    <path d="M -100 0 Q -45 -34 0 -34 Q 45 -34 100 0 Q 45 34 0 34 Q -45 34 -100 0 Z" fill="#009640"/>
+  </g>
+
+  <!-- ===================== TOP GREEN BAND ===================== -->
+  <rect x="0" y="0" width="2160" height="34" fill="url(#greenBar)"/>
+  <rect x="0" y="34" width="2160" height="6" fill="#c8cdd2"/>
+
+  <!-- ===================== LOGO ===================== -->
+  <g filter="url(#softShadow)">
+    <g transform="translate(1080,400)">
+      <!-- marquise / pointed oval -->
+      <path d="M -430 0 Q -200 -148 0 -148 Q 200 -148 430 0 Q 200 148 0 148 Q -200 148 -430 0 Z"
+            fill="url(#green)" stroke="#ffffff" stroke-width="10"/>
+      <path d="M -430 0 Q -200 -148 0 -148 Q 200 -148 430 0 Q 200 148 0 148 Q -200 148 -430 0 Z"
+            fill="none" stroke="#00552300" stroke-width="0"/>
+      <path d="M -404 -6 Q -195 -134 0 -134 Q 195 -134 404 -6 Q 200 -60 0 -60 Q -200 -60 -404 -6 Z"
+            fill="url(#logoShine)"/>
+      <text x="0" y="52" text-anchor="middle"
+            font-family="'Liberation Sans','DejaVu Sans',sans-serif"
+            font-size="170" font-weight="bold" font-style="italic"
+            fill="#ffffff" letter-spacing="6">BITZER</text>
+    </g>
+  </g>
+
+  <!-- ===================== WELCOME STEEL PLATE ===================== -->
+  <g filter="url(#plateShadow)">
+    <rect x="150" y="720" width="1860" height="760" rx="10" fill="url(#steelEdge)"/>
+    <rect x="158" y="728" width="1844" height="744" rx="8" fill="url(#steel)"/>
+    <rect x="158" y="728" width="1844" height="744" rx="8" fill="url(#brush)"/>
+  </g>
+  <!-- corner screws -->
+  <g fill="#9aa1a8" stroke="#6f767d" stroke-width="3">
+    <circle cx="220" cy="790" r="17"/>
+    <circle cx="1940" cy="790" r="17"/>
+    <circle cx="220" cy="1410" r="17"/>
+    <circle cx="1940" cy="1410" r="17"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.7" stroke-width="3">
+    <line x1="210" y1="780" x2="230" y2="800"/>
+    <line x1="1930" y1="780" x2="1950" y2="800"/>
+    <line x1="210" y1="1400" x2="230" y2="1420"/>
+    <line x1="1930" y1="1400" x2="1950" y2="1420"/>
+  </g>
+
+  <text x="1080" y="1010" text-anchor="middle"
+        font-family="'Liberation Sans','DejaVu Sans',sans-serif"
+        font-size="196" font-weight="bold" fill="#2b2f33" letter-spacing="26"
+        filter="url(#textShadow)">WELCOME</text>
+
+  <!-- green divider -->
+  <rect x="580" y="1088" width="1000" height="10" rx="5" fill="#009640"/>
+  <path d="M 1080 1074 l 26 24 l -26 24 l -26 -24 Z" fill="#009640"/>
+
+  <text x="1080" y="1252" text-anchor="middle"
+        font-family="'Liberation Sans','DejaVu Sans',sans-serif"
+        font-size="112" font-weight="bold" fill="#006b2d" letter-spacing="6">INTERCOOLING DESIGN</text>
+  <text x="1080" y="1386" text-anchor="middle"
+        font-family="'Liberation Sans','DejaVu Sans',sans-serif"
+        font-size="92" font-weight="bold" fill="#3c4147" letter-spacing="14">CO., LTD.</text>
+
+  <!-- ===================== MIDDLE MESSAGE ===================== -->
+  <g font-family="'Liberation Sans','DejaVu Sans',sans-serif" text-anchor="middle" fill="#4a4438">
+    <text x="1080" y="1860" font-size="66" letter-spacing="22" fill="#8a7f68">FOR THE</text>
+
+    <text x="1080" y="2040" font-size="132" font-weight="bold" fill="#2f3438" letter-spacing="8">21 JULY 2026 TRAINING</text>
+
+    <text x="1080" y="2200" font-size="84" letter-spacing="10" fill="#4a4f54">AT</text>
+
+    <text x="1080" y="2372" font-size="126" font-weight="bold" fill="#009640" letter-spacing="8">BITZER TRAINING CENTER</text>
+  </g>
+
+  <!-- thin separator -->
+  <g transform="translate(1080,2600)">
+    <line x1="-420" y1="0" x2="-60" y2="0" stroke="#b3a98f" stroke-width="4"/>
+    <line x1="60" y1="0" x2="420" y2="0" stroke="#b3a98f" stroke-width="4"/>
+    <path d="M 0 -20 L 34 0 L 0 20 L -34 0 Z" fill="none" stroke="#009640" stroke-width="6"/>
+  </g>
+
+  <g font-family="'Liberation Sans','DejaVu Sans',sans-serif" text-anchor="middle">
+    <text x="1080" y="2856" font-size="104" font-weight="bold" fill="#2f3438" letter-spacing="6">WE SINCERELY THANK YOU</text>
+    <text x="1080" y="3006" font-size="104" font-weight="bold" fill="#2f3438" letter-spacing="6">FOR JOINING US.</text>
+  </g>
+
+  <!-- ===================== FOOTER ===================== -->
+  <rect x="0" y="3480" width="2160" height="360" fill="url(#greenBar)"/>
+  <rect x="0" y="3472" width="2160" height="8" fill="#c8cdd2"/>
+  <!-- subtle footer marquise motif -->
+  <g transform="translate(1080,3660) scale(3.2)" opacity="0.14">
+    <path d="M -100 0 Q -45 -34 0 -34 Q 45 -34 100 0 Q 45 34 0 34 Q -45 34 -100 0 Z" fill="#ffffff"/>
+  </g>
+  <g font-family="'Liberation Sans','DejaVu Sans',sans-serif" text-anchor="middle" fill="#ffffff">
+    <text x="1080" y="3628" font-size="72" font-weight="bold" letter-spacing="16">BITZER TRAINING CENTER</text>
+    <line x1="760" y1="3672" x2="1400" y2="3672" stroke="#ffffff" stroke-opacity="0.6" stroke-width="3"/>
+    <text x="1080" y="3752" font-size="52" letter-spacing="8" fill="#e6f5ec">www.bitzer.de</text>
+  </g>
+</svg>
+</div>
+</body>
+</html>
