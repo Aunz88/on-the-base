@@ -48,12 +48,27 @@
       <stop offset="0.5" stop-color="#009640"/>
       <stop offset="1"   stop-color="#007a34"/>
     </linearGradient>
-    <!-- logo highlight -->
-    <linearGradient id="logoShine" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
-      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.08"/>
-      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    <!-- logo gradient + script lettering -->
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#33b061"/>
+      <stop offset="0.45" stop-color="#1e9648"/>
+      <stop offset="1" stop-color="#0d7231"/>
     </linearGradient>
+    <filter id="logoInnerGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <g id="letters" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -60 40 C 20 10 70 -80 88 -180 C 96 -235 92 -262 62 -258 C 36 -254 40 -215 78 -196 C 100 -185 125 -180 148 -178" stroke-width="36"/>
+      <path d="M 88 -180 C 72 -100 48 -30 24 15" stroke-width="36"/>
+      <path d="M 148 -178 C 232 -184 252 -120 168 -98 C 252 -96 268 8 168 16 C 128 19 92 8 66 -8" stroke-width="36"/>
+      <path d="M 322 -100 C 306 -65 294 -28 290 4 C 287 26 306 26 330 -2" stroke-width="36"/>
+      <path d="M 348 -160 L 349 -161" stroke-width="42"/>
+      <path d="M 478 -235 C 452 -145 430 -55 424 4 C 421 28 446 26 470 -2" stroke-width="36"/>
+      <path d="M 386 -118 C 450 -136 530 -140 592 -130" stroke-width="30"/>
+      <path d="M 530 -108 C 575 -124 620 -122 642 -108 C 602 -68 565 -30 548 2 C 636 -18 664 -6 654 44 C 645 92 578 106 562 60 C 554 36 576 16 616 8" stroke-width="36"/>
+      <path d="M 736 -58 C 786 -72 806 -108 770 -119 C 726 -131 696 -60 710 -20 C 723 13 772 8 806 -24" stroke-width="36"/>
+      <path d="M 868 -108 C 852 -68 840 -28 836 4 M 842 -58 C 866 -98 906 -124 926 -104 C 936 -94 927 -79 912 -78" stroke-width="36"/>
+    </g>
     <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
       <feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#4a4438" flood-opacity="0.35"/>
     </filter>
@@ -85,29 +100,54 @@
     <line x1="1984" y1="0" x2="1984" y2="3840"/>
   </g>
 
-  <!-- giant faint marquise watermark -->
-  <g transform="translate(1080,2350) scale(11)" opacity="0.05">
-    <path d="M -100 0 Q -45 -34 0 -34 Q 45 -34 100 0 Q 45 34 0 34 Q -45 34 -100 0 Z" fill="#009640"/>
+  <!-- giant faint starburst watermark -->
+  <g transform="translate(1080,2350) scale(1.1) translate(-1000,-370)" opacity="0.05">
+    <path d="M 28 370 Q 300 260 528 142 L 916 114 L 1000 30 L 1084 114 L 1472 142 Q 1700 260 1972 370 Q 1700 480 1472 598 L 1084 626 L 1000 710 L 916 626 L 528 598 Q 300 480 28 370 Z" fill="#009640"/>
   </g>
 
   <!-- ===================== TOP GREEN BAND ===================== -->
   <rect x="0" y="0" width="2160" height="34" fill="url(#greenBar)"/>
   <rect x="0" y="34" width="2160" height="6" fill="#c8cdd2"/>
 
-  <!-- ===================== LOGO ===================== -->
+  <!-- ===================== LOGO (BITZER starburst + script) ===================== -->
   <g filter="url(#softShadow)">
-    <g transform="translate(1080,400)">
-      <!-- marquise / pointed oval -->
-      <path d="M -430 0 Q -200 -148 0 -148 Q 200 -148 430 0 Q 200 148 0 148 Q -200 148 -430 0 Z"
-            fill="url(#green)" stroke="#ffffff" stroke-width="10"/>
-      <path d="M -430 0 Q -200 -148 0 -148 Q 200 -148 430 0 Q 200 148 0 148 Q -200 148 -430 0 Z"
-            fill="none" stroke="#00552300" stroke-width="0"/>
-      <path d="M -404 -6 Q -195 -134 0 -134 Q 195 -134 404 -6 Q 200 -60 0 -60 Q -200 -60 -404 -6 Z"
-            fill="url(#logoShine)"/>
-      <text x="0" y="52" text-anchor="middle"
-            font-family="'Liberation Sans','DejaVu Sans',sans-serif"
-            font-size="170" font-weight="bold" font-style="italic"
-            fill="#ffffff" letter-spacing="6">BITZER</text>
+    <g transform="translate(1080,400) scale(0.56) translate(-1000,-370)">
+      <path d="
+        M 28 370
+        Q 300 260 528 142
+        L 916 114
+        L 1000 30
+        L 1084 114
+        L 1472 142
+        Q 1700 260 1972 370
+        Q 1700 480 1472 598
+        L 1084 626
+        L 1000 710
+        L 916 626
+        L 528 598
+        Q 300 480 28 370
+        Z"
+        fill="url(#logoGrad)" stroke="#ffffff" stroke-width="12" stroke-linejoin="miter"/>
+      <path d="
+        M 80 370
+        Q 320 275 545 165
+        L 925 138
+        L 1000 62
+        L 1075 138
+        L 1455 165
+        Q 1680 275 1920 370
+        Q 1680 465 1455 575
+        L 1075 602
+        L 1000 678
+        L 925 602
+        L 545 575
+        Q 320 465 80 370
+        Z"
+        fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="14" filter="url(#logoInnerGlow)"/>
+      <g transform="translate(1000,370)">
+        <use href="#letters" transform="translate(-630,138) skewX(-14)" stroke="#0a4d22" opacity="0.85"/>
+        <use href="#letters" transform="translate(-640,126) skewX(-14)" stroke="#ffffff"/>
+      </g>
     </g>
   </g>
 
@@ -173,9 +213,9 @@
   <!-- ===================== FOOTER ===================== -->
   <rect x="0" y="3480" width="2160" height="360" fill="url(#greenBar)"/>
   <rect x="0" y="3472" width="2160" height="8" fill="#c8cdd2"/>
-  <!-- subtle footer marquise motif -->
-  <g transform="translate(1080,3660) scale(3.2)" opacity="0.14">
-    <path d="M -100 0 Q -45 -34 0 -34 Q 45 -34 100 0 Q 45 34 0 34 Q -45 34 -100 0 Z" fill="#ffffff"/>
+  <!-- subtle footer starburst motif -->
+  <g transform="translate(1080,3660) scale(0.34) translate(-1000,-370)" opacity="0.12">
+    <path d="M 28 370 Q 300 260 528 142 L 916 114 L 1000 30 L 1084 114 L 1472 142 Q 1700 260 1972 370 Q 1700 480 1472 598 L 1084 626 L 1000 710 L 916 626 L 528 598 Q 300 480 28 370 Z" fill="#ffffff"/>
   </g>
   <g font-family="'Liberation Sans','DejaVu Sans',sans-serif" text-anchor="middle" fill="#ffffff">
     <text x="1080" y="3628" font-size="72" font-weight="bold" letter-spacing="16">BITZER TRAINING CENTER</text>
